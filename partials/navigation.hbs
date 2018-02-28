@@ -1,0 +1,22 @@
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+        <!-- Loop through the navigation items -->
+        {{#foreach navigation}}
+        <li class="nav-item nav-{{slug}}{{#if current}} active{{/if}}">
+            <a class="nav-link" href="{{url absolute=" true "}}">{{label}}</a>
+        </li>
+        {{/foreach}}
+        <!-- End the loop -->
+    </ul>
+    <ul class="navbar-nav">
+        {{#if @blog.facebook}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+            </li>
+        {{/if}}
+    </ul>
+</div>
